@@ -1,0 +1,32 @@
+{
+    "action": {
+        "default_title": "Sprucemarks"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "default_locale": "en",
+    "description": "__MSG_extensionDescription__",
+    "icons": {
+        "16": "images/icon/icon-default-16.png",
+        "24": "images/icon/icon-default-24.png",
+        "32": "images/icon/icon-default-32.png",
+        "48": "images/icon/icon-default-48.png",
+        "64": "images/icon/icon-default-64.png",
+        "96": "images/icon/icon-default-96.png",
+        "128": "images/icon/icon-default-128.png"
+    },
+    "manifest_version": 3,
+    "minimum_chrome_version": "102",
+    "name": "Sprucemarks",
+    "options_ui": {
+        "open_in_tab": true,
+        "page": "page/light/dark/options.html"
+    },
+    "permissions": [
+        "bookmarks",
+        "storage"
+    ],
+    "short_name": "Sprucemarks",
+    "version": "2025.1.3.0"
+}
