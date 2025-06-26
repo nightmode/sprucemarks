@@ -73,6 +73,16 @@
 
             <div class="box">
                 <div class="box-inner">
+                    <h3>June 26, 2025</h3>
+
+                    <p>
+                        Added support for duplicate bookmark ancestors.
+                    </p>
+                </div><!-- box-inner -->
+            </div><!-- box -->
+
+            <div class="box">
+                <div class="box-inner">
                     <h3>January 3, 2025</h3>
 
                     <p>

@@ -5,9 +5,23 @@
 
             <ul>
                 <li>
-                    Updated to Manifest V3 behind the scenes.
+                    Added support for duplicate bookmark ancestors.
                 </li>
             </ul>
+
+            <hr>
+
+            <p>
+                This upgrade is intended to support the odd <a href="https://developer.chrome.com/blog/bookmarks-sync-changes" rel="noopener noreferrer" target="_blank">bookmark changes</a> coming to Chrome.
+            </p>
+
+            <p>
+                Even though this version of Sprucemarks can sort two duplicately named locations that only differ by how they are being stored, Sprucemarks can not control how bookmarks are displayed. Expect browsers like Chrome to display things very strangely if you have a mix of local and synced bookmarks.
+            </p>
+
+            <p>
+                You can bypass all this confusion by only using local or synced bookmarks, and not mixing them both. The browser bookmark manager is a great location to audit and relocate bookmarks if you find yourself in this situation.
+            </p>
         </div><!-- box-inner -->
     </div><!-- box -->
 </div><!-- show-message-upgrade-complete -->

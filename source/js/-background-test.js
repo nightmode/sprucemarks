@@ -24,8 +24,12 @@ local.test.ancestor = function test_ancestor() {
     for (const property in local.ancestor) {
         const ancestor = local.ancestor[property]
 
-        expect(typeof ancestor === 'string',
-            'Expected local.ancestor.' + ancestor + ' to be a string.'
+        expect(Array.isArray(ancestor),
+            'Expected local.ancestor.' + ancestor + ' to be an array.'
+        )
+
+        expect(typeof ancestor[0] === 'string',
+            'Expected local.ancestor.' + ancestor + '[0] to be a string.'
         )
     } // for
 } // test_ancestor
@@ -228,22 +232,24 @@ local.test.function_bookmark_get_location = async function test_function_bookmar
 
     try {
         for (const property in local.ancestor) {
-            const children = await bookmark_get_children(local.ancestor[property])
+            for (const ancestor_id of local.ancestor[property]) {
+                const children = await bookmark_get_children(ancestor_id)
 
-            if (children.length > 0) {
-                const bookmark = children[0]
+                if (children.length > 0) {
+                    const bookmark = children[0]
 
-                const path = await bookmark_get_location(bookmark.id, bookmark.parentId)
+                    const path = await bookmark_get_location(bookmark.id, bookmark.parentId)
 
-                const path_to_property = path.toLowerCase().replace(/ /g, '_')
+                    const path_to_property = path.toLowerCase().replace(/ /g, '_')
 
-                expect(path_to_property === property,
-                    'Expected "' + path_to_property + '" to equal "' + property + '".'
-                )
-            } // if
+                    expect(path_to_property === property,
+                        'Expected "' + path_to_property + '" to equal "' + property + '".'
+                    )
+                } // if
+            } // for
         } // for
 
-        const bookmark_id = Object.values(local.ancestor)[0]
+        const bookmark_id = Object.values(local.ancestor)[0][0]
         const parent_id = bookmark_root()
 
         const path = await bookmark_get_location(bookmark_id, parent_id)
@@ -276,7 +282,7 @@ local.test.function_bookmark_get_tree = async function test_function_bookmark_ge
             'Expected tree.children to have one or more ancestor bookmarks.'
         )
 
-        const ancestor_values = Object.values(local.ancestor)
+        const ancestor_values = Object.values(local.ancestor).join().split(',')
 
         expect(ancestor_values.indexOf(tree.children[0].id) >= 0,
             'Expected to find the tree\'s first child bookmark ID in the local.ancestor object.'

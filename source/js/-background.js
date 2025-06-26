@@ -343,7 +343,7 @@ const bookmark_ancestors = local.function.bookmark_ancestors = async function bo
 
 const bookmark_ancestors_to_options = local.function.bookmark_ancestors_to_options = function bookmark_ancestors_to_options() {
     /*
-    Create local.option properties for each local.ancestor bookmark, if needed.
+    Create local.option properties for each local.ancestor, if needed.
     */
 
     for (const property in local.ancestor) {
@@ -393,10 +393,10 @@ const bookmark_compare = local.function.bookmark_compare = function bookmark_com
             let sort_order = ''
 
             for (const property in local.ancestor) {
-                if (parent_id === local.ancestor[property]) {
+                if (local.ancestor[property].indexOf(parent_id) >= 0) {
                     sort_order = local.option[property + '_sort']
                     break
-                } else if (ancestor !== parent_id && ancestor === local.ancestor[property]) {
+                } else if (ancestor !== parent_id && local.ancestor[property].indexOf(ancestor) >= 0) {
                     sort_order = local.option[property + '_sub_sort']
                     break
                 } // if
@@ -469,7 +469,13 @@ const bookmark_find_ancestors = local.function.bookmark_find_ancestors = async f
     for (const item of bookmarks) {
         const property = item.title.toLowerCase().replace(/ /g, '_')
 
-        local.ancestor[property] = item.id
+        if (local.ancestor[property] === undefined) {
+            // create new array with id
+            local.ancestor[property] = [item.id]
+        } else {
+            // append existing array
+            local.ancestor[property].push(item.id)
+        } // if
     } // for
 } // bookmark_find_ancestors
 
@@ -508,7 +514,7 @@ const bookmark_get_ancestor_then_sort = local.function.bookmark_get_ancestor_the
         const bookmark_parent_id = bookmark.parentId
 
         if (bookmark_parent_id === bookmark_root()) {
-            const ancestor_known = (Object.values(local.ancestor).indexOf(id) >= 0) ? true : false
+            const ancestor_known = (Object.values(local.ancestor).join().split(',').indexOf(id) >= 0) ? true : false
 
             if (ancestor_known === false) {
                 log('bookmark_get_ancestor_then_sort -> ancestor id "' + id  + '" is unknown so calling bookmark_ancestors()')
@@ -797,7 +803,7 @@ const bookmark_remove = local.function.bookmark_remove = async function bookmark
         return 'early'
     } // if
 
-    const ancestors = Object.values(local.ancestor)
+    const ancestors = Object.values(local.ancestor).join().split(',')
 
     if (ancestors.indexOf(id) >= 0) {
         // oops, bookmark ID is an ancestor folder which should never be removed
@@ -920,7 +926,7 @@ const bookmark_sort = local.function.bookmark_sort = async function bookmark_sor
 
     bookmark_parent_was_in_queue(parent_id) // make sure parent_id is in the parent_folders queue so listeners can ignore our own sort events
 
-    if (Object.values(local.ancestor).indexOf(id) >= 0) {
+    if (Object.values(local.ancestor).join().split(',').indexOf(id) >= 0) {
         ancestor = id // be your own ancestor with time travel!
     } // if
 
@@ -933,7 +939,7 @@ const bookmark_sort = local.function.bookmark_sort = async function bookmark_sor
         let break_sort = false
 
         for (const property in local.ancestor) {
-            if (parent_id === local.ancestor[property] &&
+            if (local.ancestor[property].indexOf(parent_id) >= 0 &&
                 (local.option[property] === false || local.option[property] === undefined)) {
                 log('bookmark_sort -> no need to sort ' + property)
 
@@ -943,7 +949,7 @@ const bookmark_sort = local.function.bookmark_sort = async function bookmark_sor
                     log('bookmark_sort -> no need to sort ' + property + ' sub folders')
                     allow_recurse = false
                 } // if
-            } else if (ancestor !== parent_id && ancestor === local.ancestor[property] &&
+            } else if (ancestor !== parent_id && local.ancestor[property].indexOf(ancestor) >= 0 &&
                 (local.option[property + '_sub'] === false || local.option[property + '_sub'] === undefined)) {
                 log('bookmark_sort -> no need to sort ' + property + ' sub folders')
 
@@ -1246,21 +1252,17 @@ const install_or_upgrade = local.function.install_or_upgrade = async function in
             let check_version = ''
             const message_upgrade = 'install_or_upgrade -> upgrade for version less than '
 
-            check_version = '2025.1.3.0'
+            check_version = '2025.6.26.0'
             if (version_less_than(version_in_storage, check_version)) {
                 // version_storage is less than check_version
                 log(message_upgrade + check_version)
 
-                // upgrade logic
+                // show a one-time message
+                local.setting.show_message.upgrade_complete = true
+
+                // show extension page
+                local.setting.show_extension = true
             } // if
-
-            /*
-            // show a one-time message
-            local.setting.show_message.upgrade_complete = true
-
-            // show extension page
-            local.setting.show_extension = true
-            */
         } // upgrade
 
         if (local.setting.show_extension === true) {
@@ -2677,7 +2679,7 @@ const tool_empty_folders_remove = local.function.tool_empty_folders_remove = asy
         return 'early'
     } // if
 
-    const ancestors = Object.values(local.ancestor)
+    const ancestors = Object.values(local.ancestor).join().split(',')
 
     for (let index = 0; index < folders.length; index++) {
         if (typeof folders[index] !== 'string') {
