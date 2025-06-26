@@ -6,7 +6,7 @@
 <html lang="en" class="<js>write(theme)</js>" id="html">
 <head>
     <js>include('/page/include/-head.html')</js>
-    <link rel="icon" href="/images/icon/icon-<js>write(icon)</js>-32.png?version=2025.1.3.0" type="image/png">
+    <link rel="icon" href="/images/icon/icon-<js>write(icon)</js>-32.png?version=2025.6.26.0" type="image/png">
 </head>
 <body class="<js>write(theme)</js>">
 
@@ -162,9 +162,9 @@
 
     <js>include('/page/include/-scroll-nav.html')</js>
 
-    <script src="/js/browser-polyfill.js?version=2025.1.3.0"></script>
-    <script src="/js/shared.js?version=2025.1.3.0"></script>
-    <script src="/js/page/preferences.js?version=2025.1.3.0"></script>
+    <script src="/js/browser-polyfill.js?version=2025.6.26.0"></script>
+    <script src="/js/shared.js?version=2025.6.26.0"></script>
+    <script src="/js/page/preferences.js?version=2025.6.26.0"></script>
 
 </body>
 </html>

@@ -581,7 +581,7 @@ const theme_and_icon = shared.function.theme_and_icon = function theme_and_icon(
             // popup pages do not use favicons
         } else {
             // update the favicon
-            favicon.href = '/images/icon/icon-' + icon_color + '-32.png?version=2025.1.3.0'
+            favicon.href = '/images/icon/icon-' + icon_color + '-32.png?version=2025.6.26.0'
         } // if
 
         theme_or_icon_changed = true

@@ -494,14 +494,14 @@ const setup_sort_options = local.function.setup_sort_options = function setup_so
             const option_examples = template.querySelectorAll('.option-example')
 
             if (img.src !== '') {
-                img.src += '?version=2025.1.3.0'
+                img.src += '?version=2025.6.26.0'
                 img.alt = ''
 
                 option_examples[0].appendChild(img)
             } // if
 
             if (img_sub.src !== '') {
-                img.src += '?version=2025.1.3.0'
+                img.src += '?version=2025.6.26.0'
                 img_sub.alt = ''
 
                 option_examples[1].appendChild(img_sub)

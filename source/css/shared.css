@@ -21,7 +21,7 @@ Font Families
     font-family: 'National Park';
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/national-park.woff?version=2025.1.3.0') format('woff');
+    src: url('/fonts/national-park.woff?version=2025.6.26.0') format('woff');
 }
 
 @font-face {
@@ -29,7 +29,7 @@ Font Families
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/inter.woff?version=2025.1.3.0') format('woff');
+    src: url('/fonts/inter.woff?version=2025.6.26.0') format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -38,7 +38,7 @@ Font Families
     font-family: 'Inter Medium';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/inter-medium.woff?version=2025.1.3.0') format('woff');
+    src: url('/fonts/inter-medium.woff?version=2025.6.26.0') format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -47,7 +47,7 @@ Font Families
     font-family: 'Inter SemiBold';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/inter-semibold.woff?version=2025.1.3.0') format('woff');
+    src: url('/fonts/inter-semibold.woff?version=2025.6.26.0') format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -56,7 +56,7 @@ Font Families
     font-family: 'Inter Bold';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/inter-bold.woff?version=2025.1.3.0') format('woff');
+    src: url('/fonts/inter-bold.woff?version=2025.6.26.0') format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -159,7 +159,7 @@ IDs
     /* animation-name: scroll-nav-fade-in; */
     /* animation-name: scroll-nav-fade-out; */
     animation-timing-function: ease-in-out;
-    background-image: url('/images/scroll-nav-light.svg?version=2025.1.3.0');
+    background-image: url('/images/scroll-nav-light.svg?version=2025.6.26.0');
     background-position: 2px 50%;
     background-repeat: no-repeat;
     background-size: 28px 28px;
@@ -902,7 +902,7 @@ Grid
 }
 
 .grid-row .grid-item:first-child a.bookmark-folder {
-    background-image: url('/images/folder.svg?version=2025.1.3.0');
+    background-image: url('/images/folder.svg?version=2025.6.26.0');
     background-position: 15px 49%;
     background-repeat: no-repeat;
     background-size: 18px;
@@ -1137,7 +1137,7 @@ Form Elements
 
 input[type=checkbox] {
     -webkit-appearance: none;
-    background-image: url('/images/checkbox.svg?version=2025.1.3.0');
+    background-image: url('/images/checkbox.svg?version=2025.6.26.0');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 35px;
@@ -1155,12 +1155,12 @@ input[type=checkbox]:focus {
 }
 
 input[type=checkbox]:checked {
-    background-image: url('/images/checkbox-checked.svg?version=2025.1.3.0');
+    background-image: url('/images/checkbox-checked.svg?version=2025.6.26.0');
 }
 
 input[type=radio] {
     -webkit-appearance: none;
-    background-image: url('/images/radio.svg?version=2025.1.3.0');
+    background-image: url('/images/radio.svg?version=2025.6.26.0');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 26px;
@@ -1181,13 +1181,13 @@ input[type=radio]:focus {
 }
 
 input[type=radio]:checked {
-    background-image: url('/images/radio-checked.svg?version=2025.1.3.0');
+    background-image: url('/images/radio-checked.svg?version=2025.6.26.0');
 }
 
 select {
     -webkit-appearance: none;
     background-color: white;
-    background-image: url('/images/select-dark.svg?version=2025.1.3.0');
+    background-image: url('/images/select-dark.svg?version=2025.6.26.0');
     background-position: 95% 51%;
     background-repeat: no-repeat;
     background-size: 17px;
@@ -1315,11 +1315,11 @@ body.dark input[type=button]:disabled {
 }
 
 body.dark input[type=checkbox] {
-    background-image: url('/images/checkbox-dark.svg?version=2025.1.3.0');
+    background-image: url('/images/checkbox-dark.svg?version=2025.6.26.0');
 }
 
 body.dark input[type=checkbox]:checked {
-    background-image: url('/images/checkbox-dark-checked.svg?version=2025.1.3.0');
+    background-image: url('/images/checkbox-dark-checked.svg?version=2025.6.26.0');
 }
 
 body.dark nav li:first-child span {
@@ -1347,7 +1347,7 @@ body.dark nav a.active span {
 
 body.dark select {
     background-color: #262626;
-    background-image: url('/images/select-light.svg?version=2025.1.3.0');
+    background-image: url('/images/select-light.svg?version=2025.6.26.0');
     border-color: transparent;
     color: hsl(0, 0%, 72%);
 }
@@ -1438,7 +1438,7 @@ body.dark #overlay {
 }
 
 body.dark #scroll-nav {
-    background-image: url('/images/scroll-nav-dark.svg?version=2025.1.3.0');
+    background-image: url('/images/scroll-nav-dark.svg?version=2025.6.26.0');
 }
 
 body.dark #tool-bookmark-history-nav .text {

@@ -66,11 +66,11 @@
     <div class="box">
         <div class="box-inner">
             <p>
-                Mozilla Firefox hides extensions by default but you can use the extensions <span class="no-wrap">menu <img src="/images/messages/firefox/puzzle.png?version=2025.1.3.0" width="18" height="18" class="icon" alt></span> in the upper right of Firefox to click on the <span class="no-wrap">gear <img src="/images/messages/firefox/gear.png?version=2025.1.3.0" width="18" height="18" class="icon" alt></span> for Sprucemarks which will then reveal a "Pin to Toolbar" option.
+                Mozilla Firefox hides extensions by default but you can use the extensions <span class="no-wrap">menu <img src="/images/messages/firefox/puzzle.png?version=2025.6.26.0" width="18" height="18" class="icon" alt></span> in the upper right of Firefox to click on the <span class="no-wrap">gear <img src="/images/messages/firefox/gear.png?version=2025.6.26.0" width="18" height="18" class="icon" alt></span> for Sprucemarks which will then reveal a "Pin to Toolbar" option.
             </p>
 
             <p>
-                The above procedure will allow the Sprucemarks <span class="no-wrap">icon <img src="/images/messages/firefox/tree.png?version=2025.1.3.0" width="18" height="18" class="icon" alt></span> to be visible and enable one-click access.
+                The above procedure will allow the Sprucemarks <span class="no-wrap">icon <img src="/images/messages/firefox/tree.png?version=2025.6.26.0" width="18" height="18" class="icon" alt></span> to be visible and enable one-click access.
             </p>
 
             <p>
